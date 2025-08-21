@@ -25,7 +25,7 @@ fondo();
 
    function agujero(centerx, centery){
    let i,ii;
-   i=600;
+  
    ii=height/2;
    if (mouseIsPressed)
       {
@@ -37,7 +37,7 @@ fondo();
 noStroke();
 
  fill(9,ll);
-         translate(i,ii);
+         translate(600,ii);
       ellipse(centerx,centery,240+mas,140+mas);
      fill(14);
     
@@ -68,5 +68,6 @@ function patron(){
      ellipse(bob,pa+12,15,9);
    }}   
 }
+
 
 

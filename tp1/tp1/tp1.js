@@ -1,6 +1,7 @@
 //Com1_Rosario Arri_122595/8
 //
 let img;
+let mas=0;
 function preload(){
  img=loadImage('30.png'); 
 }
@@ -8,32 +9,22 @@ function setup() {
   createCanvas(800, 400);
    
  background(255);
-
 }
-  
-
-  
-
 
 function draw() {
 image(img,400,400);
+ mas+=9;
      if (key == ' '){
 fondo();
   
-  }else{
-   
-  }
-
-      
+  }else{  }
      patron();
  agujero(0,0);
    
 }
-let mas=0;
+
    function agujero(centerx, centery){
    let i,ii;
-     
-     mas+=9;
    i=600;
    ii=height/2;
    if (mouseIsPressed)
@@ -77,4 +68,5 @@ function patron(){
      ellipse(bob,pa+12,15,9);
    }}   
 }
+
 

@@ -1,5 +1,5 @@
-
-
+//Com1_Rosario Arri_122595/8
+//
 let img;
 function preload(){
  img=loadImage('30.png'); 
@@ -77,3 +77,4 @@ function patron(){
      ellipse(bob,pa+12,15,9);
    }}   
 }
+

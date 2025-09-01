@@ -1,8 +1,10 @@
+//Com1
+//Arri Rosario_ 122595/8
+//
 
-
-//let img;
-//function preload(){
- //img=loadImage('30.png'); 
+let img;
+function preload(){
+ img=loadImage('30.png'); 
 
 function setup() {
   createCanvas(800, 400);
@@ -17,7 +19,7 @@ function setup() {
 let mas=0;
 function draw() {
    mas+=9;
-//image(img,400,400);
+image(img,400,400);
 if (key == ' '){
 fondo(12,12);
   
@@ -77,3 +79,4 @@ function patron(xr, yr){
      ellipse(bob,pa+yr,15,9);
    }}   
 }
+

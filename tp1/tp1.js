@@ -1,4 +1,5 @@
-
+//Com1_Arri Rosario-122595/8
+//
 
 let img;
 function preload(){
@@ -80,3 +81,4 @@ function patron(xr, yr){
      ellipse(bob,pa+yr,15,9);
    }}   
 }
+

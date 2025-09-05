@@ -38,17 +38,13 @@ fondo(12,12);
 }
 
    function agujero(centerx, centery){
-   let ii;
-
-   ii=height/2;
-   
-        
+     
       let ll= map(mas,0,150, 50, 20);
       
 noStroke();
 
  fill(9,ll);
-         translate(600,ii);
+         translate(600,200);
       ellipse(centerx,centery,240+mas,140+mas);
      fill(14);
     
@@ -81,5 +77,6 @@ function patron(xr, yr){
      ellipse(bob,pa+yr,15,9);
    }}   
 }
+
 
 

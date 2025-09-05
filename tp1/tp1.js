@@ -56,7 +56,7 @@ noStroke();
      
    }
 function fondo(x,y){
-  let activa =true;
+ 
         for( let bob=405; bob<width; bob+=25){ 
    for( let pa=7; pa<height; pa+=25){
     
@@ -81,4 +81,5 @@ function patron(xr, yr){
      ellipse(bob,pa+yr,15,9);
    }}   
 }
+
 

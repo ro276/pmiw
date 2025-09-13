@@ -26,12 +26,7 @@ if (key == ' '){
 fondo(12,12);
   
   }else{
-  
-   
   }
-
-
-      
      patron(12,12);
  agujero(0,0);
    
@@ -49,8 +44,8 @@ noStroke();
      fill(14);
     
       ellipse(centerx,centery,240,150);
-     
    }
+
 function fondo(x,y){
  
         for( let bob=405; bob<width; bob+=25){ 
@@ -61,8 +56,6 @@ function fondo(x,y){
    
      ellipse(bob+x,pa,30,30);
      ellipse(bob,pa+y,30,30);
-     
-
    }}}
 
 
@@ -77,6 +70,7 @@ function patron(xr, yr){
      ellipse(bob,pa+yr,15,9);
    }}   
 }
+
 
 
 

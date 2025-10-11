@@ -1,0 +1,193 @@
+// 
+//ArriRosario_122595/8 
+//Com1
+
+let imagenes = [];
+let textos = [
+  "Martin, enfermo y postrado en cama, recibe a Torry con alegría.",
+  "La madre de Martin entra a retar al perro, informada de los huecos en la casa de la vecina Tarkins.",
+  "Martin escribe una nota para poner en el collar de Torry.",
+  "Llegan visitas a la casa, entre ellas la señorita Haight, alegre y sonriente.",
+  "Mamá le dice a Martin que la señorita Haight murió.",
+  "Martin se cuestiona la muerte y el silencio lo invade.",
+  "Torry se comporta de manera extraña y desaparece, dejando a Martin devastado.",
+  "Martin observa el mundo desde su ventana y los libros sobre el clima.",
+  "Una noche lo dejan al cuidado de la vecina Tarkins.",
+  "Torry aparece de nuevo con olor putrefacto.",
+  "Martin sale a buscarlo en el bosque helado.",
+  "Muere de frío y sus padres descubren el acontecimiento.",
+  "La madre, harta, decide atar a Torry y no dejarlo salir.",
+  "Martin la resiente, y su enfermedad empeora.",
+  "Finalmente, Martin fallece, dejando a su madre devastada.",
+  "Tarkins lo ata afuera, mientras Martin lo espera.",
+  "Martin escucha los ladridos, pero el perro entra solo.",
+  "Martin y Torry vuelven a estar juntos. Fin."
+];
+
+
+let escena = 0;
+let musicaIntro, musicaFondo, sonidoPagina;
+let iniciado = false;
+
+
+function preload() {
+  imagenes[0] = loadImage("data/img0.png");
+  imagenes[1] = loadImage("data/img1.jpg");
+  imagenes[2] = loadImage("data/img2.jpg");
+  imagenes[3] = loadImage("data/img3.jpg");
+  imagenes[4] = loadImage("data/img4.png");
+  imagenes[5] = loadImage("data/img5.png");
+  imagenes[6] = loadImage("data/img6.png");
+  imagenes[7] = loadImage("data/img7.png");
+  imagenes[8] = loadImage("data/img8.png");
+  imagenes[9] = loadImage("data/img9.png");
+  imagenes[10] = loadImage("data/img10.png");
+  imagenes[11] = loadImage("data/img11.png");
+  imagenes[12] = loadImage("data/img12.png");
+  imagenes[13] = loadImage("data/img13.png");
+  imagenes[14] = loadImage("data/img14.png");
+  imagenes[15] = loadImage("data/img15.png");
+  imagenes[16] = loadImage("data/img16.png");
+  imagenes[17] = loadImage("data/img17.png");
+  imagenes[18] = loadImage("data/img18.jpg");
+  imagenes[19] = loadImage("data/img19.png");
+
+  musicaIntro = loadSound("data/Intro.mp3");
+  musicaFondo = loadSound("data/musica.mp3");
+  sonidoPagina = loadSound("data/pagina.mp3");
+}
+
+
+function setup() {
+  createCanvas(640, 480);
+  textFont("Arial");
+  textAlign(LEFT, TOP);
+}
+
+function draw() {
+  background(0);
+
+  if (!iniciado) {
+    image(imagenes[0], 0, 0, width, height);
+    fill(255);
+    textAlign(CENTER, CENTER);
+    textSize(24);
+    text("Haz clic para comenzar la historia", width / 2, height / 2 + 100);
+    return;
+  }
+
+  image(imagenes[escena], 0, 0, width, height);
+  mostrarTexto(escena - 1);
+
+  // Mostrar decisiones según escena
+  if (escena === 2) {
+    dibujarBoton(100, 380, 180, 50, "La madre lo deja");
+    dibujarBoton(360, 380, 180, 50, "La madre ata al perro");
+  } else if (escena === 8) {
+    dibujarBoton(100, 380, 180, 50, "Martin se queda");
+    dibujarBoton(360, 380, 180, 50, "Martin sale a buscarlo");
+  } else if (escena === 10) {
+    dibujarBoton(100, 380, 180, 50, "Tarkins se queda");
+    dibujarBoton(360, 380, 180, 50, "Tarkins se va");
+  } else {
+    dibujarBoton(width / 2 - 90, 400, 180, 50, "Siguiente");
+  }
+}
+
+
+function mostrarTexto(i) {
+  fill(255);
+  textSize(18);
+  text(textos[i], 50, 60, 540, 200);
+}
+
+
+function mousePressed() {
+  if (!iniciado) {
+    userStartAudio();
+    musicaIntro.loop();
+    iniciado = true;
+    return;
+  }
+
+  //"siguiente"
+  if (mouseEnBoton(width / 2 - 90, 400, 180, 50) && escena !== 2 && escena !== 8 && escena !== 10) {
+    sonidoPagina.play();
+    if (escena === 0) {
+      musicaIntro.stop();
+      musicaFondo.loop();
+    }
+    escena++;
+    if (escena >= imagenes.length) {
+      escena = 0;
+      musicaFondo.stop();
+      musicaIntro.loop();
+    }
+  }
+
+  //Decisiones
+  // Escena 2
+  if (escena === 2) {
+    if (mouseEnBoton(100, 380, 180, 50)) {
+      escena = 3; // La madre lo deja
+    } else if (mouseEnBoton(360, 380, 180, 50)) {
+      escena = 18; // La madre ata al perro
+    }
+  }
+
+  // Escena 8
+  if (escena === 8) {
+    if (mouseEnBoton(100, 380, 180, 50)) {
+      escena = 9; // Martin se queda
+    } else if (mouseEnBoton(360, 380, 180, 50)) {
+      escena = 16; // Martin sale a buscarlo
+    }
+  }
+
+  // Escena 10
+  if (escena === 10) {
+    if (mouseEnBoton(100, 380, 180, 50)) {
+      escena = 11; // Tarkins se queda
+    } else if (mouseEnBoton(360, 380, 180, 50)) {
+      escena = 14; // Tarkins se va
+    }
+  }
+
+  //flujo de escenas
+  if (escena === 18) escena = 19;
+  else if (escena === 19) escena = 0;
+
+  if (escena === 3) escena = 4;
+  else if (escena === 4) escena = 5;
+  else if (escena === 5) escena = 6;
+  else if (escena === 6) escena = 7;
+  else if (escena === 7) escena = 8;
+
+  if (escena === 16) escena = 17;
+  else if (escena === 17) escena = 0;
+
+  if (escena === 9) escena = 10;
+
+  if (escena === 14) escena = 15;
+  else if (escena === 15) escena = 0;
+
+  if (escena === 11) escena = 12;
+  else if (escena === 12) escena = 13;
+  else if (escena === 13) escena = 0;
+}
+
+
+function dibujarBoton(x, y, w, h, texto) {
+  rectMode(CORNER);
+  if (mouseEnBoton(x, y, w, h)) fill(255);
+  else fill(220);
+  rect(x, y, w, h, 10);
+  fill(0);
+  textAlign(CENTER, CENTER);
+  textSize(14);
+  text(texto, x + w / 2, y + h / 2);
+}
+
+function mouseEnBoton(x, y, w, h) {
+  return mouseX > x && mouseX < x + w && mouseY > y && mouseY < y + h;
+}

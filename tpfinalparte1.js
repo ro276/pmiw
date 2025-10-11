@@ -95,7 +95,7 @@ function draw() {
 }
 
 
-function mostrarTexto(i) {
+function mostrarTexto() {
   fill(255);
   textSize(18);
   text(textos[i], 50, 60, 540, 200);
@@ -191,4 +191,5 @@ function dibujarBoton(x, y, w, h, texto) {
 function mouseEnBoton(x, y, w, h) {
   return mouseX > x && mouseX < x + w && mouseY > y && mouseY < y + h;
 }
+
 

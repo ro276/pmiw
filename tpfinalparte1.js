@@ -31,26 +31,26 @@ let iniciado = false;
 
 
 function preload() {
-  imagenes[0] = loadImage("data/img0.png");
+  imagenes[0] = loadImage("data/img0.jpg");
   imagenes[1] = loadImage("data/img1.jpg");
   imagenes[2] = loadImage("data/img2.jpg");
   imagenes[3] = loadImage("data/img3.jpg");
-  imagenes[4] = loadImage("data/img4.png");
-  imagenes[5] = loadImage("data/img5.png");
-  imagenes[6] = loadImage("data/img6.png");
-  imagenes[7] = loadImage("data/img7.png");
-  imagenes[8] = loadImage("data/img8.png");
-  imagenes[9] = loadImage("data/img9.png");
-  imagenes[10] = loadImage("data/img10.png");
-  imagenes[11] = loadImage("data/img11.png");
-  imagenes[12] = loadImage("data/img12.png");
-  imagenes[13] = loadImage("data/img13.png");
-  imagenes[14] = loadImage("data/img14.png");
-  imagenes[15] = loadImage("data/img15.png");
-  imagenes[16] = loadImage("data/img16.png");
-  imagenes[17] = loadImage("data/img17.png");
+  imagenes[4] = loadImage("data/img4.jpg");
+  imagenes[5] = loadImage("data/img5.jpg");
+  imagenes[6] = loadImage("data/img6.jpg");
+  imagenes[7] = loadImage("data/img7.jpg");
+  imagenes[8] = loadImage("data/img8.jpg");
+  imagenes[9] = loadImage("data/img9.jpg");
+  imagenes[10] = loadImage("data/img10.jpg");
+  imagenes[11] = loadImage("data/img11.jpg");
+  imagenes[12] = loadImage("data/img12.jpg");
+  imagenes[13] = loadImage("data/img13.jpg");
+  imagenes[14] = loadImage("data/img14.jpg");
+  imagenes[15] = loadImage("data/img15.jpg");
+  imagenes[16] = loadImage("data/img16.jpg");
+  imagenes[17] = loadImage("data/img17.jpg");
   imagenes[18] = loadImage("data/img18.jpg");
-  imagenes[19] = loadImage("data/img19.png");
+  imagenes[19] = loadImage("data/img19.jpg");
 
   musicaIntro = loadSound("data/Intro.mp3");
   musicaFondo = loadSound("data/musica.mp3");
@@ -191,3 +191,4 @@ function dibujarBoton(x, y, w, h, texto) {
 function mouseEnBoton(x, y, w, h) {
   return mouseX > x && mouseX < x + w && mouseY > y && mouseY < y + h;
 }
+

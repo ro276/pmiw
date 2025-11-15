@@ -1,7 +1,7 @@
+//https://youtu.be/_hxG9E8NZfk   Com1
+//Rosario Arri_122595/8
 let juego;
-let torry = [];
-let hoja,hueso;
-let sound;
+
 
 function preload() {
  
@@ -25,3 +25,4 @@ function draw() {
 function keyPressed() {
   juego.teclas(key, keyCode);
 }
+

@@ -1,5 +1,5 @@
 //Arri_Rosario 122596/8 Comi1
-//
+//https://youtu.be/NqroONYRb1s
 let juego;
 
 function preload() {
@@ -22,3 +22,4 @@ function draw() {
 function keyPressed() {
   juego.teclas(key, keyCode);
 }
+

@@ -1,6 +1,6 @@
 //Arri Rosario 121595/8
 //com1
-// 
+// https://youtu.be/azavV3FFDZQ
 let imagenes = [];
 let textos = [
   "Martin, enfermo y postrado en cama, recibe a Torry con alegría.",
@@ -39,7 +39,7 @@ function preload() {
   musicaFondo = loadSound("data/musica.mp3");
   sonidoPagina = loadSound("data/pagina.mp3");
 }
-//la magia
+
 function setup() {
   createCanvas(640, 480);
   textFont("Arial");
@@ -179,3 +179,4 @@ function dibujarBoton(x, y, w, h, texto) {
 function mouseEnBoton(x, y, w, h) {
   return mouseX > x && mouseX < x + w && mouseY > y && mouseY < y + h;
 }
+
